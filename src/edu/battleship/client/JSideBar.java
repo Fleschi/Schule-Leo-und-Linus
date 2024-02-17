@@ -7,7 +7,6 @@ public class JSideBar extends JPanel {
 
 	public JSideBar() {
 		setPreferredSize(new Dimension(120, 300));
-		setBackground(Color.CYAN);
 	}
 
 }
