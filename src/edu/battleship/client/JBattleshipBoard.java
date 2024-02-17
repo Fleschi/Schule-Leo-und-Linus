@@ -27,6 +27,12 @@ public class JBattleshipBoard extends JPanel {
 		g.setColor(Color.white);
 		g.fillRect(x1, y1, s, s);
 		paintGrid(g, x1, y1, s);
+		double t = s / 11.0;
+		FontMetrics fm = g.getFontMetrics();
+		for (int i = 0; i < 10; i++) {
+			g.drawString("A", r(x1 + i * t + 0.5 * t), r(y1 + 0.5 * t));
+		}
+
 	}
 
 	private static void paintGrid(Graphics2D g, int x1, int y1, int s) {
@@ -37,6 +43,8 @@ public class JBattleshipBoard extends JPanel {
 			g.drawLine(r(x1 + t * i), y1, r(x1 + t * i), y1 + s);
 		}
 	}
+
+
 
 	private static int r(double d) {
 		return (int) Math.round(d);
