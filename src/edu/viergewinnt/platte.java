@@ -1,4 +1,4 @@
-package viergewinnt;
+package edu.viergewinnt;
 
 public class platte {
 

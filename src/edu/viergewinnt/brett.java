@@ -1,4 +1,4 @@
-package viergewinnt;
+package edu.viergewinnt;
 /* x-Länge 7
    y-Länge 6
  */
