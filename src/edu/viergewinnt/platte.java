@@ -17,15 +17,24 @@ int einfuegewert;
         if (farbe == "gelb")
             einfuegewert = -1;
 
-        for(int yLaenge = 0; yLaenge<6; yLaenge++) {
-            if (brett.brett[xStelle][yLaenge + 1] == 0) {
-                if (einfuegewert == 1)
+        for(int yLaenge = 6; yLaenge>0; yLaenge--) {
+            if (brett.brett[xStelle][yLaenge] == 0) {
+                if (einfuegewert == 1){
                     brett.brett[xStelle][yLaenge] = 1;
-                if (einfuegewert == -1)
+					}					
+                if (einfuegewert == -1){
                     brett.brett[xStelle][yLaenge] = -1;
+					}
+				if (brett.brett[xStelle][6] != 0){
+					einfuegewert = 0;
+					}
+					
             }
         }
-
+		//Gucken, ob einer 4 Punkte hat
+		for (int platziert = 0; platziert<7; platziert++)
+			if (brett.brett[xStelle][platziert] == brett.brett[xStelle][platziert+1]
+)
 
     }
 }
