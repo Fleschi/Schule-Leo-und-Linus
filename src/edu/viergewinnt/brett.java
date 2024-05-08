@@ -19,7 +19,7 @@ public class brett {
         for (int horizontal = 0; horizontal <6 ; horizontal++) {
 
             for (int vertikal = 0; vertikal < 7; vertikal++){
-            System.out.print("| " + brett[horizontal][vertikal] + " ");
+                System.out.print("| " + brett[horizontal][vertikal] + " ");
 
             }
             System.out.println(" |");
