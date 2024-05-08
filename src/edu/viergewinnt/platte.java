@@ -3,7 +3,7 @@ package edu.viergewinnt;
 public class platte {
 
 int einfuegewert;
-
+int zähler;
     public void einfügen(int xStelle, String farbe ){
         if (farbe != "rot" && farbe != "gelb") {
             farbe = "";
@@ -21,13 +21,24 @@ int einfuegewert;
             if (brett.brett[xStelle][yLaenge] == 0) {
                 if (einfuegewert == 1){
                     brett.brett[xStelle][yLaenge] = 1;
-					}					
+					for (int i = 0; i<4, i++) {
+						//Hier wird geguckt, ob der Spieler vertikal ein 4 Gewinnt hat 
+						if (brett.brett[xStelle][yLänge]=brett.brett[xStelle][yLänge + i]) {	
+							zähler++
+						}
+						// Hier wird geprintet dass der Spieler gewonnen hat falls "zähler 4 ist"
+						
+						
+					}
+					if (zähler == 4) {
+							System.out.print("Spieler" + farbe + "hat gewonnen" );
+				}					
                 if (einfuegewert == -1){
                     brett.brett[xStelle][yLaenge] = -1;
-					}
+				}
 				if (brett.brett[xStelle][6] != 0){
 					einfuegewert = 0;
-					}
+				}
 					
             }
         }
