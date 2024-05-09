@@ -4,6 +4,7 @@ public class platte {
 
     int inputValue;
     int counter;
+    int yWert;
 
 
     public int einfügen(int xStelle, String farbe) {
@@ -20,26 +21,30 @@ public class platte {
         if (farbe == "gelb") {
             inputValue = -1;
         }
+        //Hier wird geguckt, ob die Reihe bereits ganz voll ist
+        if (brett.brett[0][xStelle - 1] != 0) {
+            System.out.println("Reihe" + xStelle + "ist bereits voll");
+        }
         //Das ist die Loop um eine Platte zu platzieren
         for (int yStelle = 6; yStelle > -1; yStelle--) {
-            while (brett.brett[yStelle][xStelle - 1 ] != 0) {
-                brett.brett[yStelle - 1][xStelle - 1] = inputValue;
-            }
-            if (brett.brett[0][xStelle-1] != 0) {
+            if (brett.brett[0][xStelle - 1] != 0) {
                 break;
-                System.out.println("Reihe" + xStelle + "ist bereits voll");
+                while (brett.brett[yStelle][xStelle - 1] != 0) {
+                    yWert++;
+                }
             }
+            brett.brett[yWert][xStelle - 1] = inputValue;
         }
+        return (yWert);
     }
 
-    public void gewinnerFinden(int xStelle, String farbe){
+    public void gewinnerFinden (int xStelle, String farbe){
         //Hier wird geguckt, ob ein Spieler 4 in irgendeiner Weise hat
-        for (int yStelle = 0; yStelle < 6; yStelle++){
+        for (int yStelle = 0; yStelle < 6; yStelle++) {
             //Hier wird geguckt, ob ein Spieler 4 in einer Vertikalen Linie hat
-            if (yStelle>=2) {
+            if (yStelle >= 2) {
                 if (brett.brett[yStelle][xStelle] == brett.brett[yStelle - 1][xStelle]) {
                     counter++;
-
                 }
             }
 
@@ -69,19 +74,17 @@ public class platte {
                     if (brett.brett[yStelle][xStelle] == brett.brett[yStelle - looper][xStelle - looper]) {
                         counter++;
                     }
-                }
-                if (counter == 4) {
-                    break;
-                }
             }
-
-
+            if (counter == 4) {
+                break;
+            }
+        }
 
             //Hier wird geguckt, ob ein Spieler 4 horizontal hat
 
-            for (int i = 0; i<4; i++) {
-                while (brett.brett[yStelle][xStelle] == brett.brett[yStelle][xStelle - i]) {
-                    if (xStelle - 1 -i == 0) {
+            for (int i = 0; i < 4; i++) {
+                while (brett.brett[yWert][xStelle] == brett.brett[yWert][xStelle - i]) {
+                    if (xStelle - 1 - i == 0) {
                         break;
                     }
                     counter++;
@@ -89,8 +92,8 @@ public class platte {
                         break;
                     }
                 }
-                while (brett.brett[yStelle][xStelle]==brett.brett[yStelle][xStelle+i]) {
-                    if (xStelle -1 +i == 7) {
+                while (brett.brett[yWert][xStelle] == brett.brett[yWert][xStelle + i]) {
+                    if (xStelle - 1 + i == 7) {
                         break;
                     }
                     counter++;
@@ -99,28 +102,14 @@ public class platte {
                     }
                 }
             }
-
-
-
         }
         // Hier wird geprintet, dass der Spieler gewonnen hat, falls er 4 in einer Reihe hat
         if (counter >= 4) {
             System.out.print("Spieler" + farbe + "hat gewonnen");
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
 }
+
+
+
+
