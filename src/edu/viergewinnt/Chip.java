@@ -2,8 +2,8 @@ package edu.viergewinnt;
 
 public enum Chip {
 
-    ROT("R"),
-    BLAU("B");
+    ROT("O"),
+    BLAU("X");
 
     private final String farbe;
 
