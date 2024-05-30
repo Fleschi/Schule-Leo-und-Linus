@@ -15,7 +15,7 @@ public class Brett {
         this.brett = new Chip[zeilenAnzahl][spaltenAnzahl];
     }
 
-    public boolean chipEinfuegen(Chip chip, int... spaltenIDs) {
+    public boolean chipEinfuegen(Chip chip, int ... spaltenIDs) {
         boolean res = false;
         for (int i = 0; i < spaltenIDs.length; i++) {
             res |= chipEinfuegen(chip, spaltenIDs[i]);
