@@ -1,10 +1,21 @@
 package edu.viergewinnt;
 
-import static edu.viergewinnt.Chip.*;
+import static edu.viergewinnt.Brett.Chip.*;
 
 
 public class Brett {
 
+    /**
+     * Chip Typen
+     */
+    enum Chip {
+        ROT(),
+        BLAU();
+    }
+
+    /**
+     * Model state des Bretts
+     */
     private final Chip[][] brett;
 
     public Brett() {
@@ -15,15 +26,15 @@ public class Brett {
         this.brett = new Chip[zeilenAnzahl][spaltenAnzahl];
     }
 
-    public boolean chipEinfuegen(Chip chip, int ... spaltenIDs) {
+    public boolean chipEinfuegen(Chip chip, int... spaltenIDs) {
         boolean res = false;
         for (int i = 0; i < spaltenIDs.length; i++) {
-            res |= chipEinfuegen(chip, spaltenIDs[i]);
+            res |= chipEinfuegen0(chip, spaltenIDs[i]);
         }
         return res;
     }
 
-    public boolean chipEinfuegen(Chip chip, int spaltenID) {
+    private boolean chipEinfuegen0(Chip chip, int spaltenID) {
         int x = spaltenID - 1;
         if (chip == null) {
             throw new IllegalArgumentException("Chip argument darf nicht null sein.");
@@ -117,13 +128,14 @@ public class Brett {
         return counter >= 4;
     }
 
+
     @Override
     public String toString() {
         String line = createLine(brett[0].length);
         StringBuilder res = new StringBuilder(line + "\n");
         for (int y = 0; y < brett.length; y++) {
             for (int x = 0; x < brett[0].length; x++) {
-                res.append("| ").append(Chip.getFarbe(brett[y][x])).append(" ");
+                res.append("| ").append(toFarbe(brett[y][x])).append(" ");
             }
             res.append("|\n");
         }
@@ -131,13 +143,36 @@ public class Brett {
         return res.toString();
     }
 
-    private String createLine(int spaltenanzahl) {
+
+//////////////////////////
+// static helper methods
+//////////////////////////
+
+
+    private static String createLine(int spaltenanzahl) {
         StringBuilder sb = new StringBuilder();
         for (int x = 0; x < spaltenanzahl; x++) {
             sb.append("----");
         }
         return "" + sb + "-";
     }
+
+    private static String toFarbe(Chip c) {
+        if (c == null) {
+            return " ";
+        } else if (c == ROT){
+            return "R";
+        } else if (c == BLAU) {
+            return "B";
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+
+//////////////////////////
+// static program
+//////////////////////////
+
 
     public static void main(String[] args) {
         Brett brett = new Brett();
@@ -148,4 +183,6 @@ public class Brett {
         System.err.println(brett);
         System.err.println("Vier gewinnt: " + res);
     }
+
+
 }
