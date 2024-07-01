@@ -3,6 +3,7 @@ package edu.viergewinnt;
 import static edu.viergewinnt.Brett.Chip.*;
 
 
+
 public class Brett {
 
     /**
@@ -29,16 +30,16 @@ public class Brett {
     public boolean chipEinfuegen(Chip chip, int... spaltenIDs) {
         boolean res = false;
         for (int i = 0; i < spaltenIDs.length; i++) {
-            res |= chipEinfuegen0(chip, spaltenIDs[i]);
+            res = res | chipEinfuegen0(chip, spaltenIDs[i]);
         }
         return res;
     }
 
     private boolean chipEinfuegen0(Chip chip, int spaltenID) {
-        int x = spaltenID - 1;
         if (chip == null) {
             throw new IllegalArgumentException("Chip argument darf nicht null sein.");
         }
+        int x = spaltenID - 1;
         if (x < 0) {
             throw new IllegalArgumentException("Spaltenargument nicht unterstützt: " + spaltenID + ", Brettgröße ist [" + brett[0].length + "x" + brett.length + "].");
         }
@@ -132,15 +133,15 @@ public class Brett {
     @Override
     public String toString() {
         String line = createLine(brett[0].length);
-        StringBuilder res = new StringBuilder(line + "\n");
+        StringBuilder sb = new StringBuilder(line + "\n");
         for (int y = 0; y < brett.length; y++) {
             for (int x = 0; x < brett[0].length; x++) {
-                res.append("| ").append(toFarbe(brett[y][x])).append(" ");
+                sb.append("| ").append(toFarbe(brett[y][x])).append(" ");
             }
-            res.append("|\n");
+            sb.append("|\n");
         }
-        res.append(line);
-        return res.toString();
+        sb.append(line);
+        return sb.toString();
     }
 
 
