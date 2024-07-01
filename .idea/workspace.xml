@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afcc8064-84b0-445a-accf-af9bbd57298a" name="Changes" comment="Moved Battleship to other Repository">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="afcc8064-84b0-445a-accf-af9bbd57298a" name="Changes" comment="Restore configuration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,8 +74,8 @@
     "jdk.selected.JAVA_MODULE": "20",
     "onboarding.tips.debug.path": "C:/Users/Linus/IdeaProjects/linus_10d/src/Main.java",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -310,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719853219229</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Restore configuration">
+      <option name="closed" value="true" />
+      <created>1719853552762</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1719853552762</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -361,17 +365,7 @@
     <MESSAGE value="update von Papa" />
     <MESSAGE value="erste beta version" />
     <MESSAGE value="Moved Battleship to other Repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved Battleship to other Repository" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Restore configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restore configuration" />
   </component>
 </project>
